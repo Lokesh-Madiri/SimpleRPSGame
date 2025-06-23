@@ -1,3 +1,6 @@
+# SimpleRPSGame
+A beginner-friendly Rock Paper Scissors game built using HTML, CSS, and JavaScript. Focused on DOM manipulation, event handling, and basic game logic.
+
 # 🪨📄✂️ Rock Paper Scissors Game
 
 This is a simple Rock-Paper-Scissors game built using **HTML, CSS, and vanilla JavaScript**. It was created as part of my learning journey to practice **DOM manipulation**, **event handling**, and **basic JavaScript logic**.
