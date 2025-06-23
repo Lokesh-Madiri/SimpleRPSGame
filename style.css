@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+.startingPage{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#Gameheading{
+    margin: 50px 0px 0px 12vw;
+    width: 470px;
+    height: 100%;
+    background-color: rgba(0, 255, 255, 0.266);
+    text-align: start;
+    font-size: 2.5rem;
+    border-radius: 58px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#Gameheading h2 {
+    margin-top: 0px;
+    position: relative;
+    top : 20px;
+    line-height: 128px;
+    font-family: 'Noto Sans JP', cursive, sans-serif;
+    font-weight: 500;
+    width: 70%;
+    height:  100%;
+}
+
+#playButton{
+    
+    margin-left:140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gochi Hand';
+    font-size: 4.5rem;
+    color: white;
+    border-radius: 55px;
+    height: 100px;
+    width: 300px;
+    background-color:rgb(255, 112, 136);
+}
+
+#playButton:hover{
+    cursor: pointer;
+    background-color: rgb(249, 142, 159);
+}
+
+.gamePage{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+}
+
+#returnButton{
+    height: 50px;
+    width: 50px;
+}
+
+#selectionBar{
+    margin: 9px 0px 0px 50px;
+    height:700px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+}
+
+#choosebutton{
+    font-size: 2.5rem;
+    position: relative;
+    height: 150px;
+    min-height: 50px;
+    width: 500px;
+    border-radius: 55px;
+    border: 2px;
+    background-color: rgba(127, 217, 255, 0.232);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#selectionButtons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px
+}
+
+#rockButton, #paperButton, #scissorButton {
+    min-height: 30px;
+    height: 120px;
+    width: 320px;
+    margin: 10px 0;
+    background: #fff;
+    border-radius: 50px;
+    border: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Sans JP', cursive, sans-serif;
+    font-size: 1.2rem;
+    position: relative;
+    
+}
+
+#showcaseBar{
+    margin-top: 40px;
+    height: 90%;
+    width: 600px;
+    border: 2px solid #333;
+    border-radius: 50px 50px 0px 0px;
+
+}
+
+#rockButton::before{
+    content: "";
+    position: absolute;
+    border-radius:50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-image: url('./static/handrock.PNG');
+    background-repeat: repeat;
+    background-size: 40px;
+}
+
+#paperButton::before{
+    content: "";
+    position: absolute;
+    border-radius:50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-image: url('./static/handpaper.PNG');
+    background-repeat: repeat;
+    background-size: 40px;
+}
+
+#scissorButton::before{
+    content: "";
+    position: absolute;
+    border-radius:50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-image: url('./static/handscissor.PNG');
+    background-repeat: repeat;
+    background-size: 40px;
+}
+
+
+#showcaseBar{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap :10px;
+    border-radius: 5px;
+}
+
+#showcaseBar div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 1.4;
+}
+
+#showcaseBar img{
+    border-radius: 15px;
+}
+
+#overlayResult{
+    height: 100%;
+    width: 100%;
+    display: none;
+    position : absolute;
+    z-index: 5;
+    color: #33333359;
+    justify-content: center;
+    align-items: center;
+    background :  rgba(255,255,255,0.7);
+}
+
+#overlayTextBox {
+    background: white;
+    border: 3px solid #333;
+    border-radius: 18px;
+    padding: 16px 62px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    font-size: 2rem;
+    color: #222;
+    text-align: center;
+}
+
+#overlayResult p{
+    font-size: 2rem;
+    border-radius: 15px;
+}
+
+#overlayTextBox img:hover{
+    background-color: rgba(128, 128, 128, 0.118);
+}
