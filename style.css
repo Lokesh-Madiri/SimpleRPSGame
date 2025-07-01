@@ -52,6 +52,174 @@
         width: 150px;
         background-color:rgb(255, 112, 136);
     }
+
+    #playButton:hover{
+        cursor: pointer;
+        background-color: rgb(249, 142, 159);
+    }
+
+    .gamePage{
+        width: 100vw;
+        height: auto;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #returnButton{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: auto;
+        width: auto;
+    }
+
+    #selectionBar{
+        height:350px;
+        max-width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:50px;
+    }
+
+    #choosebutton{
+        font-size: 2.5rem;
+        position: relative;
+        height: 150px;
+        min-height: 50px;
+        width: 75vw;
+        border-radius: 55px;
+        border: 2px;
+        background-color: rgba(127, 217, 255, 0.232);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #selectionButtons{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap:2px
+    }
+
+    #rockButton, #paperButton, #scissorButton {
+        min-height: 30px;
+        height: 80px;
+        width: 120px;
+        background: #fff;
+        border-radius: 50px;
+        border: 2px;
+        padding-right: 14px;
+        display: grid;
+        grid: 20px / auto auto auto;
+        place-content: center;
+        place-items: center;
+        font-family: 'Noto Sans JP', cursive, sans-serif;
+        font-size: 0.8rem;
+        position: relative;
+        
+    }
+
+    #showcaseBar{
+        margin-top: 40px;
+        height: 100%;
+        width: 100vw;
+        border: 2px solid #333;
+        border-radius: 50px 50px 50px 50px;
+
+    }
+
+    #rockButton::before{
+        content: "";
+        position: absolute;
+        border-radius:50px;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        background-image: url('./static/handrock.PNG');
+        background-repeat: repeat;
+        background-size: 40px;
+    }
+
+    #paperButton::before{
+        content: "";
+        position: absolute;
+        border-radius:50px;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        background-image: url('./static/handpaper.PNG');
+        background-repeat: repeat;
+        background-size: 40px;
+    }
+
+    #scissorButton::before{
+        content: "";
+        position: absolute;
+        border-radius:50px;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        background-image: url('./static/handscissor.PNG');
+        background-repeat: repeat;
+        background-size: 40px;
+    }
+
+
+    #showcaseBar{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap :10px;
+        border-radius: 5px;
+    }
+
+    #showcaseBar div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scale: 1;
+    }
+
+    #showcaseBar img{
+        border-radius: 15px;
+    }
+
+    #overlayResult{
+        height: 120%;
+        width: 100vw;
+        display: none;
+        position : absolute;
+        z-index: 5;
+        color: #33333359;
+        justify-content: center;
+        align-items: center;
+        background :  rgba(255,255,255,0.7);
+    }
+
+    #overlayTextBox {
+        background: rgba(255, 255, 255, 0.293);
+        border: 3px solid #333;
+        border-radius: 18px;
+        padding: 16px 62px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+        font-size: 2rem;
+        color: #222;
+        text-align: center;
+    }
+
+    #overlayResult p{
+        font-size: 2rem;
+        border-radius: 15px;
+    }
+
+    #overlayTextBox img:hover{
+        background-color: rgba(128, 128, 128, 0.118);
+    }
 }
 
 
