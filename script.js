@@ -2,14 +2,24 @@ document.getElementById("playButton").addEventListener("click",gameEntry)
 
 let gameResult
 let compChoice
+let choices = {}
+let rules = {}
+let userSelection = null
+
+fetch('./gameConfig.json')
+    .then(res => res.json())
+    .then(data => {
+        choices = data.choices,
+        rules = data.rules,
+        setupUserChoice()
+    })
+
 
 function gameEntry(){
     document.getElementsByClassName("startingPage")[0].style.display = "none"
     document.getElementsByClassName("gamePage")[0].style.display = "flex"
 }
 
-let choices = ["rock", "scissor", "paper"]
-let userSelection = null
 
 function setupUserChoice() {
     document.getElementById("rockButton").onclick = () => {
@@ -40,22 +50,24 @@ function display() {
 
 
     if (userSelection === null) return
-    compChoice = generatedChoice()
 
-    userImg.innerHTML = `<img src='./static/hand${choices[userSelection]}.PNG'>`
-    computerImg.innerHTML = `<img src='./static/hand${choices[compChoice]}.PNG'>`
+    let userChoice = choices[userSelection]
+    compChoice = choices[generatedChoice()]
 
-        if (userSelection === compChoice) {
+    userImg.innerHTML = `<img src='./static/hand${userChoice}.PNG'>`
+    computerImg.innerHTML = `<img src='./static/hand${compChoice}.PNG'>`
+
+
+        if (userChoice === compChoice) {
             gameResult = "draw"
-        } else if (
-            (userSelection === 0 && compChoice === 1) ||
-            (userSelection === 1 && compChoice === 2) ||
-            (userSelection === 2 && compChoice === 0)
-        ) {
+        } else if (rules[userChoice] == compChoice){
             gameResult = "won"
         } else {
             gameResult = "lost"
         }
+
+
+
             let overlay = document.getElementById("overlayResult")
     if(gameResult != null){
         overlay.style.display = "flex"
@@ -67,17 +79,21 @@ function display() {
 
 setupUserChoice();
 
-function reset(){
-    gameResult = null
-    compChoice = null
-    userSelection = null
-    let i
-    for(i = 0 ; i < 3 ; i++){
-        document.getElementById(`${choices[i]}Button`).style.border = ""
+function reset() {
+    gameResult = null;
+    compChoice = null;
+    userSelection = null;
+
+    if (Array.isArray(choices)) {
+        for (let i = 0; i < choices.length; i++) {
+            const btn = document.getElementById(`${choices[i]}Button`);
+            if (btn) btn.style.border = "";
+        }
     }
-    document.querySelector("#showcaseBar > div:nth-child(1)").innerHTML = ""
-    document.querySelector("#showcaseBar > div:nth-child(4)").innerHTML = ""
-    document.getElementById("overlayResult").style.display = "none"
+
+    document.querySelector("#showcaseBar > div:nth-child(1)").innerHTML = "";
+    document.querySelector("#showcaseBar > div:nth-child(4)").innerHTML = "";
+    document.getElementById("overlayResult").style.display = "none";
 }
 
 document.getElementById("returnButton").addEventListener("click",returnToTheMain)

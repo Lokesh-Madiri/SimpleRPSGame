@@ -1,0 +1,8 @@
+{
+    "choices" :  [ "rock" , "scissor" , "paper"] , 
+    "rules" : {
+        "rock" : "scissor",
+        "scissor" : "paper",
+        "paper" : "rock"
+    }
+}
