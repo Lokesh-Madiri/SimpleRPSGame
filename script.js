@@ -1,3 +1,6 @@
+var tl = gsap.timeline()
+
+
 document.getElementById("playButton").addEventListener("click",gameEntry)
 
 let gameResult
@@ -104,3 +107,18 @@ function returnToTheMain(){
     document.getElementsByClassName("gamePage")[0].style.display = "none"
 
 }
+
+
+tl.from("#Gameheading h2" , {
+    opacity : 0,
+    y : -100,
+    delay : 0.5,
+    duration : 2
+})
+
+tl.from("#playButton", {
+    duration : 2,
+    y : -20,
+    opacity : 0,
+    borderRadius : "20px"
+})
